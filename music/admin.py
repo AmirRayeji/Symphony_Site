@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from music.models import Music, About, Gallery, Profile
+
+
+admin.site.register(Music)
+admin.site.register(About)
+admin.site.register(Gallery)
+admin.site.register(Profile)
