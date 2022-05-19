@@ -8,7 +8,7 @@ class Music(models.Model):
     poster=models.ImageField(upload_to='poster/')
 
     def __str__(self):
-        return self.name
+        return self.singer
 
 
 class About(models.Model):
