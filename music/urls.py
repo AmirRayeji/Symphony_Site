@@ -4,5 +4,6 @@ from music import views
 
 
 urlpatterns = [
-    path('', views.MusicListVeiw)
+    path('', views.MusicListVeiw),
+    path('about', views.AboutVeiw),
 ]

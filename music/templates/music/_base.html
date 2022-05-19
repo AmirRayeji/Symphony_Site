@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <title>Symphony.com</title>
+
+    <link rel="stylesheet" href="{% static 'music/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'music/css/bootstrap.css' %}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row box">
+            <h1>{% block titlepage %}{% endblock %}</h1>
+            <ul class="btnul">
+                <li><a class="btn btn-dark">پروفایل</a></li>
+                <li><a class="btn btn-dark">صفحه اصلی</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            {% block mainContent %}{% endblock %}
+        </div>
+
+    </div>
+</body>
+
+    <script src="{% static 'music/js/bootstrap.bundle.js' %}"></script>
+</html>

@@ -1,25 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html dir="rtl">
-<head>
-    <title>Symphony.com</title>
+{% extends "music/_base.html" %}
 
-    <link rel="stylesheet" href="{% static 'music/css/style.css' %}">
-</head>
-<body>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-         Obcaecati similique quod maxime dicta ratione assumenda molestias consequuntur 
-         exercitationem aliquam illum perspiciatis eius, est illo voluptate delectus.
-         Perspiciatis eius consectetur dolor.
-    </p>
-    <ul>
-        {% if musiclist %}
-            {% for music in musiclist %}
-                <li>
-                    {{ music }}
-                </li>
-            {% endfor %}
-        {% endif %}
-    </ul>
-</body>
-</html>
+{% block titlepage %}
+    لیست موسیقی ها
+{% endblock %}
+
+{% block mainContent %}
+
+    {% if musiclist %}
+        {% for music in musiclist %}
+            <div class="col-md-2">
+                <a>
+                    <div class="imagebox">
+                        <img src="{{ music.poster.url }}">
+                            {{ music }}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
