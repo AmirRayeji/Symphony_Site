@@ -1,7 +1,7 @@
 {% extends "music/_base.html" %}
 
 {% block titlepage %}
-<b>لیست موسیقی</b>
+    <b>لیست موسیقی</b>
 {% endblock %}
 
 {% block mainContent %}
@@ -9,7 +9,7 @@
     {% if musiclist %}
         {% for music in musiclist %}
             <div class="col-md-2">
-                <a>
+                <a href="/music/detail/{{ music.id }}">
                     <div class="imageBox">
                         <img src="{{ music.poster.url }}">
                         {{ music }}

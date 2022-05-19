@@ -1,0 +1,20 @@
+{% extends "music/_base.html" %}
+
+{% block titlepage %}
+    <b>جزئیات {{ musicdetail.name }}</b>
+{% endblock %}
+
+{% block mainContent %}
+    <div class="col-md-10">
+
+        <h3><b>نام کنسرت: </b>{{musicdetail.name}}</h3>
+        <h3><b>خواننده کنسرت : </b>{{musicdetail.singer}}</h3>
+        <h3><b>مدت زمان کنسرت : </b>{{musicdetail.biography}}</h3>
+
+    </div>
+    <div class="col-md-2">
+        <div class="imageBox">
+            <img src="{{ musicdetail.poster.url }}">
+        </div>
+    </div>
+{% endblock %}

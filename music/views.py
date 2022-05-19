@@ -15,7 +15,7 @@ def MusicListVeiw(request):
 
 
 def AboutVeiw(request):
-    ab=Music.objects.all()
+    ab=About.objects.all()
 
     context={
         'about':ab,
@@ -23,3 +23,11 @@ def AboutVeiw(request):
 
     return render(request, 'music/about.html', context)
     
+def MusicDetailView(request, music_id):
+    music=Music.objects.get(pk=music_id)
+
+    context={
+        'musicdetail':music
+    }
+
+    return render(request, 'music/music_detail.html', context)
