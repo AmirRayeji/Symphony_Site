@@ -21,4 +21,9 @@
             <img src="{{ musicdetail.poster.url }}" style="border-radius: 3px;">
         </div>
     </div>
+    <div>
+        <audio controls>
+            <source src="{{ musicdetail.music.url }}" type="audio/mp3">
+        </audio>
+    </div>
 {% endblock %}

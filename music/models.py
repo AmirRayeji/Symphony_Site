@@ -5,6 +5,7 @@ class Music(models.Model):
     name=models.CharField(max_length=100)
     singer=models.CharField(max_length=100)
     biography=models.TextField()
+    music=models.FileField(upload_to='music/', null=True)
     poster=models.ImageField(upload_to='poster/')
 
     def __str__(self):

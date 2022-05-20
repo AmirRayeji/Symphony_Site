@@ -13,14 +13,11 @@ p{
     background-color:#e06936;
     padding-top: 40px;
     text-align: center;
-    border-radius: 20px;
 }
 
-
 .imageBox{
-    display: flex;
     margin: 5px;
-    background-color: #a1a1a2;
+    background-color: #f1efef;
     text-align: center;
     font-size: 17px;
     border:1px dashed black;
@@ -31,7 +28,6 @@ p{
 .imageBox img{
     width: 100%;
     height: auto;
-    border-radius: 15px;
 }
 
 
