@@ -1,7 +1,9 @@
-from multiprocessing import context
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 from music.models import Music, About, Gallery
+import account
 
 
 def MusicListVeiw(request):
@@ -24,13 +26,17 @@ def AboutVeiw(request):
     return render(request, 'music/about.html', context)
     
 def MusicDetailView(request, music_id):
-    music=Music.objects.get(pk=music_id)
+    if request.user.is_authenticated and request.user.is_active:
 
-    context={
-        'musicdetail':music
-    }
+        music=Music.objects.get(pk=music_id)
 
-    return render(request, 'music/music_detail.html', context)
+        context={
+            'musicdetail':music
+        }
+
+        return render(request, 'music/music_detail.html', context)
+    else:
+        return HttpResponseRedirect(reverse(account.views.LoginView))
 
 def GalleryVeiw(request):
     gl=Gallery.objects.all()
