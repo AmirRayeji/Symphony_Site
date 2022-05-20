@@ -7,14 +7,18 @@
 {% block mainContent %}
     <div class="col-md-10">
 
-        <h3><b>نام کنسرت: </b>{{musicdetail.name}}</h3>
-        <h3><b>خواننده کنسرت : </b>{{musicdetail.singer}}</h3>
-        <h3><b>مدت زمان کنسرت : </b>{{musicdetail.biography}}</h3>
+        <p style="color: #fefdfd;"><b>نام قطعه: </b>{{musicdetail.name}}</p>
+        <p style="color: #fefdfd;"><b>خواننده: </b>{{musicdetail.singer}}</p>
+        
+
+        <h3 style="color: #fefdfd;">بیوگرافی: </h3>
+        <span></span>
+        <p style="color: #fefdfd;">{{musicdetail.biography}}</p>
 
     </div>
     <div class="col-md-2">
-        <div class="imageBox">
-            <img src="{{ musicdetail.poster.url }}">
+        <div class="imageBox" style="border-radius: 7px;">
+            <img src="{{ musicdetail.poster.url }}" style="border-radius: 3px;">
         </div>
     </div>
 {% endblock %}

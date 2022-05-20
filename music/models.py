@@ -22,7 +22,7 @@ class About(models.Model):
 
 class Gallery(models.Model):
     text=models.CharField(max_length=50)
-    image=models.ImageField()
+    image=models.ImageField(upload_to='image/')
 
     def __str__(self):
         return self.text

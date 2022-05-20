@@ -6,15 +6,25 @@
 
     <link rel="stylesheet" href="{% static 'music/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'music/css/bootstrap.css' %}">
+
+    <style>
+        @font-face{
+            font-family: 'Irancell';
+            src: local('Irancell'),
+            url('{% static "music/font/ttf/Irancell.ttf" %}') format('ttf')
+        }
+    </style>
+
 </head>
-<body>
+<body style="background-color: rgb(10, 7, 6);">
 
     <div class="container">
-        <div class="row box">
+        <div class="row box" style="border-radius: 10px;">
             <h1>{% block titlepage %}{% endblock %}</h1>
             <ul class="btnul">
-                <li><a class="btn btn-dark" href="/">صفحه اصلی</a></li>
-                <li><a class="btn btn-dark" href="/about">درباره ما</a></li>
+                <li><a class="btn btn-dark btn-sm" href="/">صفحه اصلی</a></li>
+                <li><a class="btn btn-dark btn-sm" href="/gallery">گالری</a></li>
+                <li><a class="btn btn-outline-dark btn-sm" href="/about">درباره ما</a></li>
             </ul>
         </div>
 

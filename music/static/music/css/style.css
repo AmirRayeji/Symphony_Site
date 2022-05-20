@@ -1,5 +1,11 @@
 body{
-    font-family: 'IranSanse' !important;
+    font-family: 'Irancell' !important;
+
+}
+
+
+p{
+    padding: 10px;
 }
 
 
@@ -7,12 +13,14 @@ body{
     background-color:#e06936;
     padding-top: 40px;
     text-align: center;
+    border-radius: 20px;
 }
 
 
 .imageBox{
+    display: flex;
     margin: 5px;
-    background-color: whitesmoke;
+    background-color: #a1a1a2;
     text-align: center;
     font-size: 17px;
     border:1px dashed black;
@@ -23,6 +31,7 @@ body{
 .imageBox img{
     width: 100%;
     height: auto;
+    border-radius: 15px;
 }
 
 
@@ -89,11 +98,6 @@ body{
     font-size: 20px;
     font-weight: bold;
     width: 100px !important;
-}
-
-
-p{
-    padding: 10px;
 }
 
 

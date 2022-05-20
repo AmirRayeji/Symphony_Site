@@ -1,7 +1,7 @@
 from multiprocessing import context
 from django.shortcuts import render
 
-from music.models import Music, About
+from music.models import Music, About, Gallery
 
 
 def MusicListVeiw(request):
@@ -31,3 +31,13 @@ def MusicDetailView(request, music_id):
     }
 
     return render(request, 'music/music_detail.html', context)
+
+def GalleryVeiw(request):
+    gl=Gallery.objects.all()
+
+    context={
+        'gallery':gl,
+    }
+
+    return render(request, 'music/gallery.html', context)
+    
