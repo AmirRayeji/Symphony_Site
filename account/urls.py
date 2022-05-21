@@ -5,4 +5,5 @@ from account import views
 
 urlpatterns = [
     path('login', views.LoginView),
+    path('logout', views.LogoutView),
 ]

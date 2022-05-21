@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import music
@@ -22,3 +22,8 @@ def LoginView(request):
             return render(request, 'account/login.html', context)
     else:
         return render(request, 'account/login.html', {})
+
+
+def LogoutView(request):
+    logout(request)
+    return HttpResponseRedirect(reverse(music.views.MusicListVeiw))

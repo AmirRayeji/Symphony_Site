@@ -22,9 +22,16 @@
         <div class="row box" style="border-radius: 10px;">
             <h1>{% block titlepage %}{% endblock %}</h1>
             <ul class="btnul">
+
+                {% if user.is_authenticated %}
+                    <li><a class="btn btn-dark btn-sm" href="/account/logout">خروج</a></li>
+                {% else %}
+                    <li><a class="btn btn-dark btn-sm" href="/account/login">ورود</a></li>
+                {% endif %}
+
                 <li><a class="btn btn-dark btn-sm" href="/">صفحه اصلی</a></li>
                 <li><a class="btn btn-dark btn-sm" href="/gallery">گالری</a></li>
-                <li><a class="btn btn-outline-dark btn-sm" href="/about">ارتباط با من</a></li>
+                <li><a class="btn btn-outline-dark btn-sm" href="/about">ارتباط</a></li>
             </ul>
         </div>
 
