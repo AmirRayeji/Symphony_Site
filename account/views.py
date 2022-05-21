@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+
 import music
 
 
@@ -13,7 +15,11 @@ def LoginView(request):
 
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(reverse(music.views.MusicListVeiw))
+            if request.GET.get('next'):
+                return HttpResponseRedirect(request.GET.get('next'))
+
+            return HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
+
         else:
             context={
                 'username':username,

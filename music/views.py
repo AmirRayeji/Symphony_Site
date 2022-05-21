@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 from music.models import Music, About, Gallery
 import account
@@ -24,9 +24,10 @@ def AboutVeiw(request):
     }
 
     return render(request, 'music/about.html', context)
-    
+
+
+@login_required
 def MusicDetailView(request, music_id):
-    if request.user.is_authenticated and request.user.is_active:
 
         music=Music.objects.get(pk=music_id)
 
@@ -35,8 +36,6 @@ def MusicDetailView(request, music_id):
         }
 
         return render(request, 'music/music_detail.html', context)
-    else:
-        return HttpResponseRedirect(reverse(account.views.LoginView))
 
 def GalleryVeiw(request):
     gl=Gallery.objects.all()
