@@ -1,0 +1,32 @@
+{% extends "music/_base.html" %}
+
+{% block titlepage %} 
+    <b>ثبت نام</b>
+{% endblock%}
+
+{% block mainContent %}
+  
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+      
+        <div class="mainborder">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mylable" style="color: #fefdfd;">نام: {{ formData.first_name }}</p>
+                    <p class="mylable" style="color: #fefdfd;">نام خانوادگی: {{ formData.last_name }}</p>
+                    <p class="mylable" style="color: #fefdfd;">جنسیت: {{ formData.gender }}</p>
+                </div>
+
+                <div  class="col-md-6">
+                    <p class="mylable" style="color: #fefdfd;">ایمیل: {{ formData.email }}</p>
+                    <p class="mylable" style="color: #fefdfd;">نام کاربری: {{ formData.username }}</p>
+                    <p class="mylable" style="color: #fefdfd;">رمز عبور: {{ formData.password }}</p>
+                    {{ formData.profile }}
+                </div>
+            </div>
+        </div>
+        <div class="bottonborder" style="color: #fefdfd;background-color: rgb(15, 15, 15);">
+            <button type="submit" class="btn btn-outline-light btn-sm">ثبت نام</button>
+        </div>
+    </form>
+{% endblock%}
