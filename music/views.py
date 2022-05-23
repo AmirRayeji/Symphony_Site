@@ -3,14 +3,23 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 
 from music.models import Music, About, Gallery
+from music.forms import Search
 import account
 
 
 def MusicListVeiw(request):
-    music_list=Music.objects.all()
+
+    searchform=Search(request.GET)
+
+    if searchform.is_valid():
+        search_text=searchform.cleaned_data['search_text']
+        music_list=Music.objects.filter(singer__contains=search_text)
+    else:
+        music_list=Music.objects.all()
 
     context={
         'musiclist':music_list,
+        'searchform':searchform
     }
 
     return render(request, 'music/music_list.html', context)

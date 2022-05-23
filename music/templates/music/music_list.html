@@ -7,6 +7,10 @@
 {% block mainContent %}
 
     {% if musiclist %}
+        <form action="" method="GET">
+            {{ searchform }}
+            <button type="submit" class="btn btn-outline-light btn-sm mt-1">جستجو</button>
+        </form>
         {% for music in musiclist %}
             <div class="col-md-2">
                 <a class="text-decoration-none" href="/detail/{{ music.id }}">
