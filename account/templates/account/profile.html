@@ -1,0 +1,19 @@
+{% extends "music/_base.html" %}
+
+{% block titlepage %}
+    <b>پروفایل</b>
+{% endblock %}
+
+{% block mainContent %}
+
+    <div class="row">
+        <div class="col-md-8">
+            <p style="color: #fefdfd;"><b>نام و نام خانوادگی: </b>{{ profile.user.get_full_name }}</p>
+            <p style="color: #fefdfd;"><b>جنسیت: </b>{{ profile.get_gender_display }}</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ profile.profile.url }}" style="width:60%;height:auto">
+        </div>
+    </div>
+
+{% endblock %}

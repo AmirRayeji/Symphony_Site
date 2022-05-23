@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required
 
 import music
 
@@ -33,3 +34,14 @@ def LoginView(request):
 def LogoutView(request):
     logout(request)
     return HttpResponseRedirect(reverse(music.views.MusicListVeiw))
+
+
+@login_required
+def ProfileView(request):
+    profile=request.user.profile
+
+    context={
+        'profile':profile
+    }
+
+    return render(request, 'account/profile.html', context)
