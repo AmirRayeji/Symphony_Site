@@ -3,11 +3,9 @@ body{
 
 }
 
-
 p{
     padding: 10px;
 }
-
 
 .box{
     background-color:#e06936;
@@ -24,24 +22,20 @@ p{
     padding:10px
 }
 
-
 .imageBox img{
     width: 100%;
     height: auto;
 }
-
 
 .btnul{
     list-style-type: none;
     padding-left: 0;
 }
 
-
 .btnul li{
     float: left;
     margin-left: 10px;
 }
-
 
 .location{
     margin: 5px;
@@ -51,7 +45,6 @@ p{
     padding:10px;
     text-align: right;
 }
-
 
 .locationHeader{
     background-color: whitesmoke;
@@ -63,7 +56,6 @@ p{
     color:black
 }
 
-
 .timeBox{
     margin: 5px;
     background-color: whitesmoke;
@@ -73,17 +65,14 @@ p{
     text-align: center;
 }
 
-
 .form{
     margin-top: 20px;
 }
-
 
 .mainborder{
     border:1px solid lightgray;
     margin: 20px;
 }
-
 
 .title{
     font-size: 20px;
@@ -91,12 +80,10 @@ p{
     width: 100px !important;
 }
 
-
 .mylable{
     color: black;
     width: 100px;
 }
-
 
 .bottonborder{
     background-color: lightgray;

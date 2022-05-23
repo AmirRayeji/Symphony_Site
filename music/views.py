@@ -46,6 +46,7 @@ def MusicDetailView(request, music_id):
 
         return render(request, 'music/music_detail.html', context)
 
+
 def GalleryVeiw(request):
     gl=Gallery.objects.all()
 

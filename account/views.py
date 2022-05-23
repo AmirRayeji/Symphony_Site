@@ -50,6 +50,7 @@ def ProfileView(request):
 
     return render(request, 'account/profile.html', context)
 
+
 def SignupView(request):
 
     if request.method=="POST":
@@ -80,6 +81,7 @@ def SignupView(request):
     }
 
     return render(request,"account/signup.html",context)
+
 
 def ProfileEditView(request):
 
