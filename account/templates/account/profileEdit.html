@@ -1,0 +1,35 @@
+{% extends "music/_base.html" %}
+
+{% block titlepage %} 
+    <b>ویرایش پروفایل</b>
+{% endblock%}
+
+{% block mainContent %}
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+      
+        <div class="mainborder">
+            <div class="row">
+                <div class="col-md-10">
+                    <div>
+                        <p class="border" style="color: #fefdfd;background-color: rgb(15, 15, 15); border-radius: 10px;"> <span class="title">نام: </span>{{userEditForm.first_name}}  </p>
+                        <p class="border" style="color: #fefdfd;background-color: rgb(15, 15, 15); border-radius: 10px;"> <span class="title"> نام خانوادگی: </span> {{userEditForm.last_name}} </p>
+                        <p class="border" style="color: #fefdfd;background-color: rgb(15, 15, 15); border-radius: 10px;"> <span class="title">ایمیل: </span> {{userEditForm.email}} </p>
+                        <p class="border" style="color: #fefdfd;background-color: rgb(15, 15, 15); border-radius: 10px;"> <span class="title">جنسیت: </span> {{ profileEditForm.gender }}</p>
+                    
+                    </div>
+                </div>
+                <div  class="col-md-2">
+                    <div class="imageBox">
+                        <img src="{{ profile.url }}">
+                    </div>
+                    {{ profileEditForm.profile }}
+                </div>
+           </div>
+            <div class="bottonborder">
+                <button type="submit" class="btn btn-outline-dark">ذخیره</button>
+            </div>
+        </div>
+    </form>
+{% endblock%}

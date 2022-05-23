@@ -1,4 +1,3 @@
-from unicodedata import name
 from django.conf import settings
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
@@ -8,8 +7,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 from account.models import Profile
-from account.forms import SignupForm
+from account.forms import SignupForm, ProfileEditForm, UserEditForm
 import music
+import account
 
 
 def LoginView(request):
@@ -80,3 +80,26 @@ def SignupView(request):
     }
 
     return render(request,"account/signup.html",context)
+
+def ProfileEditView(request):
+
+    if request.method=="POST":
+        profileEditForm=ProfileEditForm(request.POST,request.FILES, instance=request.user.profile)
+        userEditForm=UserEditForm(request.POST,instance=request.user)
+
+        if profileEditForm.is_valid:
+            profileEditForm.save()
+            userEditForm.save()
+            return HttpResponseRedirect(reverse(account.views.ProfileView))
+    else:
+        profileEditForm=ProfileEditForm(instance=request.user.profile)
+        userEditForm=UserEditForm(instance=request.user)
+
+    context={
+
+        "profileEditForm":profileEditForm,
+        "profile":request.user.profile.profile,
+        "userEditForm":userEditForm
+    }
+
+    return render(request,"account/profileEdit.html",context)
